@@ -1,0 +1,29 @@
+// Общие стили
+.footer-title {
+    @include adaptiv-value("font-size", 24, 20, 1);
+	 line-height: 29 / 24 * 100%;
+	 color: #000;
+	 font-weight: 700;
+	 white-space: nowrap; // от переноса стрроки 
+}
+// <BUTTON (a.btn)==========================
+.btn {
+    display: inline-flex;
+	 justify-content: center;
+	 align-items: center;
+	 padding: 0px 15px;
+	 text-align: center;
+	 transition: all 0.3s ease 0s;
+	 min-height: 48px;
+}
+
+.slider-arrows {
+}
+.slider-arrow {
+		// .slider-arrow__prev
+		&__prev {
+		}
+		// .slider-arrow__next
+		&__next {
+		}
+}	
