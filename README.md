@@ -5,6 +5,11 @@
  3. SaaS ( SCSS )
  4. Native JS 
  5. slider SWIPER
- 6. fonts icon ( icomoon )
+ 6. иконочный шрифт ( icomoon )
+ 7. Adaptive Design
+ 8. Valide Layput ( W3C standart )
  
-##  
+## Установка 
+1. Склонировать репозиторий и открыть данный проект в вашем редакторе кода
+2. Установить зависимости, через команду в терминале — npm i
+3. Запустить проект командой - gulp
