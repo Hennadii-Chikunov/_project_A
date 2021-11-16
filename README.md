@@ -1,4 +1,10 @@
-#           =>  Сайт с полным адаптивом(для портфолио)! <=
- Технологии и Требования: Gulp, Node.js, npm, SASS(SCSS), Flex / Grid layout, Native JS + spollers, slider (SWIPER), иконочный шрифт(icomoon) and ...
+#               =>  Сайт с полным адаптивом(для портфолио)! <=
+## Технологии и Требования: 
+ 1. Gulp ( требуется установленный Node.js и npm )
+ 2. Flex / Grid layout
+ 3. SaaS ( SCSS )
+ 4. Native JS 
+ 5. slider SWIPER
+ 6. fonts icon ( icomoon )
  
- TO BE Continued.... in developing
+##  
