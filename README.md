@@ -7,7 +7,7 @@
  * [slider SWIPER](https://swiperjs.com/)
  * иконочный шрифт ( icomoon )
  * Adaptive Design
- * [Valide Layput ( W3C standart )](https://www.w3.org/)
+ * [Valide layout ( W3C standart )](https://www.w3.org/)
  
 ## Установка 
 1. Склонировать репозиторий и открыть данный проект в вашем редакторе кода
