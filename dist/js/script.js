@@ -488,7 +488,7 @@ if (document.querySelector('.slider-main__body')) {
 		parallax: true,
 		// Dotts
 		pagination: {
-			el: '.controls-slider-main__dotts',
+			el: '.swiper-pagination, .controls-slider-main__dotts',
 			clickable: true,
 		},
 		// Arrows
@@ -519,6 +519,19 @@ window.onload = function () {
 		document.querySelector(".search-form").classList.remove('_active');
 	}
 }	 
+  //Header ОТСЛЕЖИВАНИЕ СКРОЛЛА ШАПКИ, РЕШЕНИЕ JS + CSS
+  const headerElement = document.querySelector(".header");
+
+  const callback = function (entries, observer) {
+	  if (entries[0].isIntersecting) {
+		  headerElement.classList.remove('_scroll');
+	  } else {
+		  headerElement.classList.add("_scroll");
+	  }
+  };
+
+  const headerObserver = new IntersectionObserver(callback);
+  headerObserver.observe(headerElement);
 };
 
 var isMobile = {

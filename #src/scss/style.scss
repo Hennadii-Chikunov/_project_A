@@ -7,10 +7,12 @@ $md2: 991.98;
 $md3: 767.98;
 $md4: 479.98;
 
-$mainColor: #3a3a3a;
+$mainBg: #02182b;
+$mainColor: #0a0909;
 $orangeColor: #e89f71;
-$grayColor: #898989;
-$darkGrayColor: #616161;
+$greenColor: #033d03;
+$grayColor: #646262;
+$darkGrayColor: #2b2727;
 $placeholder: #02182b;
 
 //</ПЕРЕМЕННЫЕ>=======================================================
@@ -34,6 +36,7 @@ $fontSize: 16;
 //<ОБЩИЕ ПАРАМЕТРЫ>=========================================
 body {
 	color: $mainColor;
+	overflow-x: hidden;
 }
 //</ОБЩИЕ ПАРАМЕТРЫ>=========================================
 
@@ -100,12 +103,21 @@ body {
 		}
 		// .main-slider__content
 		&__content {
-			flex: 0 0 494 / 1240 * 100%;
+			flex: 0 0 494/1240 * 100%;
+			align-self: flex-start;
+			@include adaptiv-value("margin-bottom", 80, 15, 1);
+			@media (max-width: $md2+px) {
+				margin: 0 -15px;
+			}
 		}
 		// .main-slider__slider
 		&__slider {
 			flex: 1 1 auto;
 			min-width: 0; // чтобы нормально отображался флекс элемент
+			align-self: flex-end;
+			@media (min-width: $md2+px) {
+				padding: 0 0 0 32px;
+			}
 		}
 }
 .container {
@@ -149,48 +161,129 @@ body {
 		// .content-main__button
 		&__button {
 			font-weight: 600;	
-			background-color: $orangeColor;
+			background-color: $greenColor;
 			color: #fff;
-			width: 100%;
+			max-width: 100%;
+			border-radius: 10px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
 			@include adaptiv-value("min-height", 78, 45, 1);
-			@include adaptiv-value("font-size", 20, 16, 1);
+			@include adaptiv-value("font-size", 22, 16, 1);
 
 			@media (any-hover: hover) {
 				&:hover {
-					background: #be8509;
+					background: #021605;
 				}
 			}
 		}
 }
 .slider-main {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	@media (max-width: $md2+px) {
+		align-items: stretch;
+		flex-direction: column-reverse;
+	}
 		// .slider-main__controls
 		&__controls {
+			align-self: stretch;
+			margin: 0 0 20px 0;
+			@media (max-width: $md2+px) {
+				margin: 10px 0 20px 0;
+			}
 		}
 		// .slider-main__body
 		&__body {
+			overflow: visible;
+			@media (min-width:$md2+px) {
+				@include adaptiv-value("width", 934, 290, 1);
+			}
+			@media (max-width: $md2+px) {
+				margin: 0 -15px;
+			}
 		}
 		// .slider-main__slide
 		&__slide {
+			position: relative;
 		}
 		// .slider-main__image
 		&__image {
+			padding: 0 0 59.1% 0;
 		}
 		// .slider-main__content
 		&__content {
+			min-width: 295px; // сделано для надежности
+			max-height: 300px; // сделано для надежности
+			overflow: auto;
+			color: inherit;
+			display: flex;
+			flex-direction: column;
+			@include adaptiv-value("padding", 24, 15, 1);
+			@media (min-width: $md3+px) {
+				position: absolute;
+				min-width: 350px;
+				@include adaptiv-value("right", 40, 0, 1);
+				@include adaptiv-value("bottom", 40, 0, 1);
+			}
+			background: rgba(255, 255, 255, 0.9);
+			/* Если браузер поддерживает backdrop-filter */
+			@supports ((-webkit-backdrop-filter: blur(31px)) or (backdrop-filter: blur(31px))) {
+				background: rgba(255, 255, 255, 0.72);
+				backdrop-filter: blur(31px);
+			}
 		}
 		// .slider-main__title
 		&__title {
+			@include adaptiv-value("font-size", 28, 22, 1);
+			font-weight: 600;
+			line-height: 120%;
+			&:not(:last-child) {
+				margin: 0 0 4px/28px * 1em 0px;
+			}
 		}
 		// .slider-main__text
 		&__text {
+			color: $grayColor;
+			line-height: 150%;
+			&:not(:last-child) {
+				margin: 0 0 8px/16px * 1em 0px;
+			}
+		}
+		&__price {
+			display: flex;
+			flex-direction: row-reverse;
+			line-height: 150%;
+			align-items: center;
+			justify-content: space-between;
+			font-weight: 600;
+			@include adaptiv-value("font-size", 20, 16, 1);
+			&::before {
+            margin: 0 0 0 10px;	
+				font-size: 14px;			
+			}
 		}
 }
 .controls-slider-main {
+	display: flex;
+	align-items: center;
 		// .controls-slider-main__dotts
 		&__dotts {
+			flex: 1 1 auto;
+			@media (min-width: $md2+px) {
+				padding: 0px 20px 0 0;
+			}
+			@media (max-width: $md2+px) {
+				justify-content: center;
+			}
 		}
 		// .controls-slider-main__arrows
 		&__arrows {
+			@media (max-width: $md2+px) {
+				display: none;
+			}
 		}
 }
 

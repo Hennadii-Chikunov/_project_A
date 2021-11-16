@@ -74,7 +74,7 @@ if (document.querySelector('.slider-main__body')) {
 		parallax: true,
 		// Dotts
 		pagination: {
-			el: '.controls-slider-main__dotts',
+			el: '.swiper-pagination, .controls-slider-main__dotts',
 			clickable: true,
 		},
 		// Arrows
