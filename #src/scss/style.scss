@@ -67,6 +67,10 @@ body {
 		// .page__main-slider
 		&__main-slider {
 		}
+		// .page__advantages
+	&__advantages {
+
+	}
 }
 //</ОСНОВНОЙ БЛОК>================================
 .main-slider {
@@ -301,4 +305,49 @@ body {
 		}
 }
 .icon-arrow-link {
+}
+//=========================================================================================
+.advantages {
+	@include adaptiv-value("padding-top", 88, 30, 1);
+	@include adaptiv-value("padding-bottom", 88, 30, 1);
+	// .advantages__container
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+	// .advantages__item
+	&__item {
+		display: inline-grid;
+		padding: 15px 0;
+		grid-template: auto auto / 85px 1fr;
+		@media (max-width: $md2+px) {
+			min-width: 280px;
+		}
+		@media (max-width: $md3+px) {
+			grid-template: auto auto / auto 1fr;
+		}
+	}
+	// .advantages__icon
+	&__icon {
+		text-align: center;
+		align-self: center;
+		grid-row: span 2;
+		padding: 0 20px;
+		@media (max-width: $md3+px) {
+			padding: 0px 15px 0px 0px;
+		}
+	}
+	// .advantages__title
+	&__title {
+		font-weight: 600;
+		font-size: 18px;
+		line-height: 150%;
+		margin: 0px 0px 2px/18px * 1em 0px;
+	}
+	// .advantages__text
+	&__text {
+		line-height: 150%;
+		color: $mainBg;
+	}
 }
