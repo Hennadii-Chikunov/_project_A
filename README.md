@@ -1,6 +1,6 @@
 #               =>  Сайт с полным адаптивом(для портфолио)! <=
 ## Технологии и Требования: 
- * Gulp ( требуется установленный [Node.js](https://nodejs.org/en/) и [npm](https://www.npmjs.com/) )
+ * Gulp ( требуется установленный [Node.js](https://nodejs.org/en/) и [npm, входит по умолчанию в Node.js(https://www.npmjs.com/) )
  * Flex / Grid layout
  * [SaaS ( SCSS )](https://sass-scss.ru/guide/)
  * Native JS 
