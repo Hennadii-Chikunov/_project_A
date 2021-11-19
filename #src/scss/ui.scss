@@ -1,10 +1,67 @@
 // Общие стили
+.ibg{
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+	img{
+		width: 0;
+	   height: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		visibility: hidden;
+		}
+	}
+// классы анимированного плейсхолдера
+   .input-box__header {
+		display: block;
+		position: relative;
+		font-size: 15px;
+	 }
+	 .input-box__header input[type="text"] {
+		height: 25px;
+		padding: 0 5px;
+		font-size: 13px;
+		color: $mainColor;
+	 }
+   input[type="text"]:focus {
+		outline: none;
+	 }
+	.placeholder {
+		display: inline-block;
+		position: absolute;
+		bottom: 0px;
+		left: 5px;
+		transition-duration: .5s;
+		z-index: -100;
+		font-size: 16px;
+		color: $placeholder;
+	 }
+	 .placeholder-show {
+		display: inline-block;
+		top: 35px;
+		left: 35px;
+		transform: translate(2%, 142%);
+		font-size: 13px;
+		z-index: 100;
+		color: $placeholder;
+	 }
+
 .footer-title {
     @include adaptiv-value("font-size", 24, 20, 1);
 	 line-height: 29 / 24 * 100%;
 	 color: #000;
 	 font-weight: 700;
 	 white-space: nowrap; // от переноса стрроки 
+}
+// общий стиль ЗАГОЛОВКА
+.title {
+	@include adaptiv-value("font-size", 40, 24, 1);
+   font-weight: 700;
+	line-height: 120%;
+	text-align: center;
 }
 // <BUTTON (a.btn)==========================
 .btn {
@@ -15,6 +72,21 @@
 	 text-align: center;
 	 transition: all 0.3s ease 0s;
 	 min-height: 48px;
+	 // BTN WHITE
+	 &__white {
+      color: $mainColor;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		background-color: #fdf6f6;
+		border-radius: 10px;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: $greenColor;
+				color: #ffffff;
+			}
+		}
+	}
 }
 
 .slider-arrows {
@@ -108,5 +180,4 @@
 			transform: scale(1);
 		 }
 	 }
-
 }

@@ -65,7 +65,9 @@ body {
 		}
 		// .page__advantages
 	&__advantages {
-
+	}
+	// .page__products
+	&__products {
 	}
 }
 //</ОСНОВНОЙ БЛОК>================================
@@ -297,7 +299,7 @@ body {
 }
 .icon-arrow-link {
 }
-//=========================================================================================
+// ====================ADVANTAGES=========================================================================================
 .advantages {
 	@include adaptiv-value("padding-top", 88, 30, 1);
 	@include adaptiv-value("padding-bottom", 88, 30, 1);
@@ -342,3 +344,188 @@ body {
 		color: $mainBg;
 	}
 }
+// =====================<Our Products>========================================================================
+.products {
+	@include adaptiv-value("padding-bottom", 44, 30, 1);
+	// .products__container
+	&__container {
+	}
+	// .products__title
+	&__title {
+		margin: 0px 0px 32px/40px * 1em 0px;
+	}
+	// .products__items
+	&__items {
+		display: grid;
+		gap: 32px;
+		grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+	}
+	// .products__item
+	&__item {
+	}
+	// .products__footer
+	&__footer {
+		padding: 32px 0px 0px 0px;
+		text-align: center;
+	}
+	// products__more
+	&__more {
+		border: 1px solid $greenColor;
+		min-width: 245px;
+	}
+}
+.item-product {
+	display: flex;
+	flex-direction: column;
+	background: #d8d2d2;
+	border-radius: 10px;
+	position: relative;
+	@media (any-hover: hover) {
+		&:hover {
+			.item-product__actions {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+	// .item-product__labels
+	&__labels {
+		position: absolute;
+		z-index: 2;
+		display: flex;
+		flex-direction: column;
+		@include adaptiv-value("right", 24, 10, 1);
+		@include adaptiv-value("top", 24, 10, 1);
+	}
+	// .item-product__label
+	&__label {
+		flex: 0 0 48px;
+		width: 48px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: #ffffff;
+		font-weight: 500;
+		border-radius: 50%;
+		&:not(:last-child) {
+			margin: 0px 0px 10px 0px;
+		}
+			// .item-product__label__sale
+		&__sale {
+			background: #e97171;
+		}
+		// .item-product__label__new
+			&__new {
+				background: #2ec1ac;
+			}
+	}
+	// .item-product__image
+	&__image {
+		padding: 0px 0px 301px/285px * 100% 0px;
+	}
+	// .item-product__body
+	&__body {
+		flex: 1 1 auto; // чтобы нижний элемент всегда прижимался к низу блока
+		padding: 16px 16px 30px 16px;
+		display: flex;
+		flex-direction: column;
+	}
+	// .item-product__content
+	&__content {
+		flex: 1 1 auto;
+	}
+	// .item-product__title
+	&__title {
+		@include adaptiv-value("font-size", 24, 20, 1);
+		font-weight: 600;
+		line-height: 120%;
+		margin: 0px 0px 8px/24px * 1em 0px;
+	}
+	// .item-product__text
+	&__text {
+		color: $darkGrayColor;
+		line-height: 150%;
+		margin: 0px 0px 8px/24px * 1em 0px;
+	}
+	// .item-product__prices
+	&__prices {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		line-height: 150%;
+	}
+	// .item-product__price
+	&__price {
+		@include adaptiv-value("font-size", 20, 16, 1);
+		font-weight: 600;
+		// .item-product__price-old
+		&__old {
+			@include adaptiv-value("font-size", 16, 14, 1);
+			font-weight: normal;
+			margin: 0px 0px 0px 16px;
+			color: #635858;
+			text-decoration: line-through;
+		}
+	}
+	// .item-product__actions
+	&__actions {
+		@media (any-hover: none) {
+			padding: 15px 0 0 0;
+		}
+		@media (any-hover: hover) {
+			opacity: 0;
+			visibility: hidden;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			transition: all 0.3s ease 0s;
+			border-radius: 10px;
+			background-color: rgba(58, 58, 58, 0.74);
+			z-index: 3;
+		}
+	}
+}
+.actions-product {
+	// .actions-product__body
+	&__body {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	// .actions-product__button
+	&__button {
+		flex: 1 1 100%;
+		&:not(:last-child) {
+			margin: 0px 0px 24px 0px;
+		}
+	}
+	// .actions-product__link
+	&__link {
+		display: flex;
+		align-items: center;
+		color: inherit;
+		font-weight: 600;
+		transition: color 0.3s ease 0s;
+		&::before {
+			margin: 0px 10px 0px 0px;
+			font-size: 16px;
+		}
+		@media (any-hover: hover) {
+			color: #ffffff;
+			&:hover {
+				color: $greenColor;
+			}
+		}
+	}
+}
+.icon-share {
+}
+.icon-favorite {
+}
+
+// ===========================</Our Products>========================================================================
