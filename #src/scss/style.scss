@@ -57,13 +57,9 @@ body {
 //	}
 }
 //</ОСНОВНАЯ СЕТКА>=======================================================
-.wrapper {
-}
-.main {
-}
+
 //<ОСНОВНОЙ БЛОК>================================
 .page {
-	flex: 1 1 auto;
 		// .page__main-slider
 		&__main-slider {
 		}
@@ -75,6 +71,7 @@ body {
 //</ОСНОВНОЙ БЛОК>================================
 .main-slider {
 	background: #fcf8f3;
+	overflow-x: hidden;
 		// .main-slider__container
 		&__container {
 			position: relative;
@@ -290,15 +287,9 @@ body {
 			}
 		}
 }
-
 .icon-arrow-down {
 }
-
-		// ._swiper
-
-		
-.ibg {
-}
+		// ._swiper	
 .slider-main {
 		// .slider-amin__price
 		&__price {

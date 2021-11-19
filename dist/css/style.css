@@ -921,14 +921,9 @@ body {
   padding: 0 20px;
 }
 
-.page {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-}
-
 .main-slider {
   background: #fcf8f3;
+  overflow-x: hidden;
 }
 
 .main-slider__container {
@@ -1498,7 +1493,7 @@ body {
 
   .menu__body {
     position: fixed;
-    width: 100%;
+    width: 100vw;
     height: 100%;
     overflow: auto;
     top: 0;

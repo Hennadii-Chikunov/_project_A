@@ -384,8 +384,10 @@ if (iconMenu) {
 }
 
 
-
-// Прокрутка при клике
+// ============= НАВИГАЦИЯ ПО СТРАНИЦЕ ======================================
+//   ДЛЯ ЭТОГО НАМ НУЖНО В HTML ДОБАВИТЬ К ССЫЛКАМ data- атрибут data-goto=""
+// с классом , пример ==> <a data-goto=".page"> </a> обязательно ставим точку перед именем класса
+// Прокрутка при клике 
 const menuLinks = document.querySelectorAll('.menu__link[data-goto]');
 if (menuLinks.length > 0) {
 	menuLinks.forEach(menuLink => {
@@ -397,7 +399,6 @@ if (menuLinks.length > 0) {
 		if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
 			const gotoBlock = document.querySelector(menuLink.dataset.goto);
 			const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset - document.querySelector('header').offsetHeight;
-			
          if (iconMenu.classList.contains('_active')) {
 				document.body.classList.remove('_lock');
 		      iconMenu.classList.remove('_active');
