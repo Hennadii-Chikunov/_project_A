@@ -173,12 +173,6 @@ body {
           flex: 1 1 auto;
 }
 
-button {
-  border: 0;
-  cursor: pointer;
-  background-color: transparent;
-}
-
 input {
   border: 0;
 }
@@ -710,6 +704,17 @@ img {
   padding: 0px 12px;
   background-color: #f4f5f7;
   color: #828282;
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+  border-radius: 0;
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  display: inline-block;
 }
 
 .ibg {

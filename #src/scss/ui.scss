@@ -1,3 +1,7 @@
+button {
+	@include no-btn;
+}
+
 // Общие стили
 .ibg{
 	background-position: center;

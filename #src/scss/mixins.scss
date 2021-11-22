@@ -27,3 +27,34 @@
 		#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
 	}
 }
+// Отмена стилей кнопки <button>
+// в css/scss @include no-btn;
+@mixin no-btn ($display:"inline-block") {
+	border: 0;
+	background-color: transparent;
+	border-radius: 0;
+	cursor: pointer;
+	appearance: none;
+	display: #{$display};
+}
+// быстрая анимация кнопки, в скобках можно изменить значение @include btn_anim(2, 0.5);
+@mixin btn_anim($scaleMax:1.05, $scaleMin:0.95) {
+	transform-origin: center center;
+	transition: all ease-out 240ms;
+
+	&:hover {
+		transform: scale(#{$scaleMax});
+	}
+
+	&:focus {
+		outline: transparent;
+	}
+
+	&:focus-visible {
+		transform: scale(#{$scaleMax}) translateY(-5%);
+	}
+
+	&:active {
+		transform: scale(#{$scaleMin});
+	}
+}

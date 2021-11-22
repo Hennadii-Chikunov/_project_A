@@ -11,6 +11,7 @@ let path = {
     img: project_folder + "/img/",
     fonts: project_folder + "/fonts/",
 	 video: project_folder + "/video/",
+	 json: project_folder + "/json/"
   },
   src: {
     html: [source_folder + "/*.html", "!" + source_folder + "/_*.html"],
@@ -19,6 +20,7 @@ let path = {
     img: source_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
     fonts: source_folder + "/fonts/*.ttf",
 	 video: source_folder + "/video/**/*.{mp4,webm,ogv}",
+	 json: source_folder + "/json/*.json"
   },
   watch: {
     html: source_folder + "/**/*.html",
@@ -26,6 +28,7 @@ let path = {
     js: source_folder + "/js/**/*.js",
     img: source_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
 	 video: source_folder + "/video/**/*.{mp4,webm,ogv}",
+	 json: source_folder + "/json/*.json"
   },
   clean: "./" + project_folder + "/",
 };
@@ -48,7 +51,8 @@ let { src, dest } = require("gulp"),
   svgSprite = require('gulp-svg-sprite'),
   ttf2woff = require('gulp-ttf2woff'),
   ttf2woff2 = require('gulp-ttf2woff2'),
-  fonter = require('gulp-fonter');
+  fonter = require('gulp-fonter'),
+  plumber = require('gulp-plumber');
 
 function browserSync(params) {
   browsersync.init({
@@ -138,6 +142,12 @@ function video () {
 	return gulp.src(path.src.video)
 		 .pipe(gulp.dest(path.build.video))
 };
+// обработка JSON
+function json() {
+	return src(path.src.json)
+	  .pipe(plumber())
+	  .pipe(dest(path.build.json))
+}
 
  function fonts() {
 	 src(path.src.fonts)
@@ -200,13 +210,14 @@ function watchFiles(params) {
   gulp.watch([path.watch.js], js);
   gulp.watch([path.watch.img], images);
   gulp.watch([path.watch.video], video);
+  gulp.watch([path.watch.json], json);
 }
 
 function clean(params) {
   return del(path.clean);
 }
 
-let build = gulp.series(clean, gulp.parallel(js, css, html, images, fonts, video), fontsStyle);
+let build = gulp.series(clean, gulp.parallel(js, json, css, html, images, fonts, video), fontsStyle);
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
 exports.video = video;
@@ -214,6 +225,7 @@ exports.fontsStyle = fontsStyle;
 exports.fonts = fonts;
 exports.images = images;
 exports.js = js;
+exports.json = json;
 exports.css = css;
 exports.html = html;
 exports.build = build;

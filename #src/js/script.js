@@ -23,7 +23,12 @@ window.onload = function () {
 	} else if (!targetElement.closest('.search-form') && document.querySelector('.search-form._active')) {
 		document.querySelector(".search-form").classList.remove('_active');
 	}
+	if (targetElement.classList.contains('products__more')) {
+		getProducts(targetElement);
+		e.preventDefault();
+	}
 }	 
+
   //Header ОТСЛЕЖИВАНИЕ СКРОЛЛА ШАПКИ, РЕШЕНИЕ JS + CSS
   const headerElement = document.querySelector(".header");
 
@@ -37,6 +42,7 @@ window.onload = function () {
 
   const headerObserver = new IntersectionObserver(callback);
   headerObserver.observe(headerElement);
+
 };
 
 var isMobile = {
@@ -74,3 +80,4 @@ if (isMobile.any()) {
 } else {
 	document.body.classList.add('_pc');
 }
+
