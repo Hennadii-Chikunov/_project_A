@@ -27,6 +27,28 @@ window.onload = function () {
 		getProducts(targetElement);
 		e.preventDefault();
 	}
+	//добавление в корзину по клику на карточку товару с нужным классом
+	if (targetElement.classList.contains('actions-product__button')) {
+		const productId = targetElement.closest('.item-product').dataset.pid;
+		addToCart(targetElement, productId);
+		e.preventDefault();
+	}
+
+	// показываем корзину по клику на иконку корзины
+	if (targetElement.classList.contains('cart-header__icon') || targetElement.closest('.cart-header__icon')) {
+		if (document.querySelector('.cart-list').children.length > 0) {
+			document.querySelector('.cart-header').classList.toggle('_active');
+		}
+		e.preventDefault();
+	} else if (!targetElement.closest('.cart-header') && !targetElement.classList.contains('actions-product__button')) {
+		document.querySelector('.cart-header').classList.remove('_active');
+	}
+	// удаление содержимого корзины
+	if (targetElement.classList.contains('cart-list__delete')) {
+		const productId = targetElement.closest('.cart-list__item').dataset.cartPid;
+		updateCart(targetElement, productId, false);
+		e.preventDefault();
+	}
 }	 
 
   //Header ОТСЛЕЖИВАНИЕ СКРОЛЛА ШАПКИ, РЕШЕНИЕ JS + CSS

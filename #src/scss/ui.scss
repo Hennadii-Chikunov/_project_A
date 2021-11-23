@@ -1,7 +1,13 @@
 button {
 	@include no-btn;
 }
-
+// стили перекрытия изображения летящего в корзину
+._flyImage.item-product__image {
+	opacity: 1;
+	position: fixed;
+	z-index: 100;
+	transition: all 1s ease 0s;
+}
 // Общие стили
 .ibg{
 	background-position: center;
@@ -18,6 +24,7 @@ button {
 		visibility: hidden;
 		}
 	}
+	
 // классы анимированного плейсхолдера
    .input-box__header {
 		display: block;

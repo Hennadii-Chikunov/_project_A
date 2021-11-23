@@ -25,12 +25,12 @@ $placeholder: #02182b;
 @import 'header';
 @import 'footer';
 @import 'ui';
+@import 'cart-list';
 //</Подключение ФАЙЛОВ СТИЛЕЙ, СТРАНИЦ И ЭЛЕМЕНТОВю===================================================
 //<Шрифт по умолчанию>===============================================
 $fontFamily: "Gilroy";
 $fontSize: 16;
 //</Шрифт по умолчанию>================================================
-
 
 
 //<ОБЩИЕ ПАРАМЕТРЫ>=========================================
@@ -122,8 +122,6 @@ body {
 				padding: 0 0 0 32px;
 			}
 		}
-}
-.container {
 }
 .content-main {
 	 position: relative;
@@ -289,15 +287,11 @@ body {
 			}
 		}
 }
-.icon-arrow-down {
-}
 		// ._swiper	
 .slider-main {
 		// .slider-amin__price
 		&__price {
 		}
-}
-.icon-arrow-link {
 }
 // ====================ADVANTAGES=========================================================================================
 .advantages {
@@ -372,6 +366,10 @@ body {
 	&__more {
 		border: 1px solid $greenColor;
 		min-width: 245px;
+		&._hold {
+			opacity: 0.2;
+			cursor: default;
+		}
 	}
 }
 .item-product {
@@ -503,6 +501,10 @@ body {
 		&:not(:last-child) {
 			margin: 0px 0px 24px 0px;
 		}
+		&._hold {
+			opacity: 0.2;
+			cursor: default;
+		}
 	}
 	// .actions-product__link
 	&__link {
@@ -523,9 +525,6 @@ body {
 		}
 	}
 }
-.icon-share {
-}
-.icon-favorite {
-}
+
 
 // ===========================</Our Products>========================================================================

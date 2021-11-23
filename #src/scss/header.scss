@@ -335,46 +335,8 @@
 }
 .icon-favorite {
 }
-.cart-header {
-	// .cart-header__icon
-	&__icon {
-		color: #262f56;
-			font-size: 24px;
-			transition: color 0.3s ease 0s;
-			position: relative;
-			display: block;
-			@media (any-hover: hover) {
-				&:hover {
-					color: $orangeColor;
-				}
-			}
-			span {
-				position: absolute;
-				width: 20px;
-				height: 20px;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				top: -10px;
-				right: -10px;
-            border-radius: 50%;
-				background-color: $orangeColor;
-				color: #ffffff;
-				font-size: 12px;
-			}
-	}
-	// .cart-header__body
-	&__body {
-	}
-	// .cart-header__list
-	&__list {
-	}
-}
+
 .icon-cart {
-}
-.cart-list {
-}
-.ibg {
 }
  //Burger
  .icon-menu {
