@@ -25,3 +25,5 @@
  ![](https://github.com/Hennadii-Chikunov/_project_A/blob/main/%23src/img/_prevDesctop.gif)
 ## preViewMob
  ![](https://github.com/Hennadii-Chikunov/_project_A/blob/main/%23src/img/mob.gif)
+ ## preView addToCart
+ ![](https://github.com/Hennadii-Chikunov/_project_A/blob/main/%23src/img/AddToCart.gif)
