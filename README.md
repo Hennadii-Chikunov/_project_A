@@ -7,7 +7,7 @@
  * [SaaS ( SCSS )](https://sass-scss.ru/guide/)
  * Native JS 
  * [slider SWIPER](https://swiperjs.com/)
- * иконочный шрифт ( icomoon )
+ * [icomoon](https://icomoon.io/) - иконочный шрифт .
  * Adaptive Design
  * [Valide layout ( W3C standart )](https://www.w3.org/)
  
