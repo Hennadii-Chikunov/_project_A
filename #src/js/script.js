@@ -1,8 +1,8 @@
-@@include('functions.js')
 @@include('dynamicAdapt.js')
 @@include('spollers.js')
 @@include("burger.js")
 @@include("sliders.js")
+@@include('functions.js')
 window.onload = function () {
 	document.addEventListener("click", documentActions);
 
@@ -102,4 +102,3 @@ if (isMobile.any()) {
 } else {
 	document.body.classList.add('_pc');
 }
-

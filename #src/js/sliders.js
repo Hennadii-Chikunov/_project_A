@@ -84,3 +84,29 @@ if (document.querySelector('.slider-main__body')) {
 		}
 	});
 }
+
+// слайдер section.Rooms
+if (document.querySelector('.slider-rooms__body')) {
+	new Swiper('.slider-rooms__body', {
+		observer: true,
+		observeParents: true,
+		slidesPerView: "auto",
+		spaceBetween: 24,
+		watchOverflow: true,
+		speed: 800,
+		loop: true,
+		loopAdditionalSlides: 5,
+		preLoadImages: false,
+		parallax: true,
+		// Dotts
+		pagination: {
+			el: '.swiper-pagination, .slider-rooms__dotts',
+			clickable: true,
+		},
+		// Arrows
+		navigation: {
+			nextEl: '.slider-rooms .slider-arrow__next',
+			prevEl: '.slider-rooms .slider-arrow__prev',
+		}
+	});
+}

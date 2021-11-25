@@ -2,8 +2,8 @@
 .cart-header {
 	// .cart-header__icon
 	&__icon {
-		color: #262f56;
-			font-size: 24px;
+		color: $greenColor;
+			font-size: 32px;
 			transition: color 0.3s ease 0s;
 			position: relative;
 			display: block;
@@ -14,17 +14,17 @@
 			}
 			span {
 				position: absolute;
-				width: 20px;
-				height: 20px;
+				width: 22px;
+				height: 22px;
 				display: flex;
 				justify-content: center;
 				align-items: center;
 				top: -10px;
 				right: -10px;
             border-radius: 50%;
-				background-color: $orangeColor;
+				background-color: $greenColor;
 				color: #ffffff;
-				font-size: 12px;
+				font-size: 17px;
 			}
 	}
 	// .cart-header__body
@@ -81,6 +81,7 @@
 	&__title {
 		color: inherit;
 		font-weight: 600;
+		font-size: 20px;
 		transition: color 0.3s ease 0s;
 		margin: 0 0 5px/16px * 1em 0px;
 		@media (any-hover: hover) {
@@ -92,12 +93,17 @@
 	// cart-list__quantity
 	&__quantity {
 		margin: 0 0 5px/14px * 1em 0px;
-		font-size: 14px;
+		font-size: 18px;
 	}
 	// cart-list__delete
 	&__delete {
-		color:#c00505e1;
-		font-size: 15px;
+		color:#ffffff;
+		font-size: 19px;
+		background-color: red;
+		border-radius: 10px;
+		padding: 10px;
+		font-weight: 600;
+		letter-spacing: 1px;
 		@media (any-hover: hover) {
 			&:hover {
 				text-decoration: underline;

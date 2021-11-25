@@ -34,9 +34,9 @@ $fontSize: 16;
 
 
 //<ОБЩИЕ ПАРАМЕТРЫ>=========================================
+
 body {
 	color: $mainColor;
-	overflow-x: hidden;
 }
 //</ОБЩИЕ ПАРАМЕТРЫ>=========================================
 
@@ -60,6 +60,7 @@ body {
 
 //<ОСНОВНОЙ БЛОК>================================
 .page {
+	overflow-x: hidden;
 		// .page__main-slider
 		&__main-slider {
 		}
@@ -69,11 +70,13 @@ body {
 	// .page__products
 	&__products {
 	}
+	// .page__rooms
+	&__rooms {
+	}
 }
 //</ОСНОВНОЙ БЛОК>================================
 .main-slider {
 	background: #fcf8f3;
-	overflow-x: hidden;
 		// .main-slider__container
 		&__container {
 			position: relative;
@@ -340,6 +343,7 @@ body {
 }
 // =====================<Our Products>========================================================================
 .products {
+	background: rgba(185, 255, 240, 0.42);
 	@include adaptiv-value("padding-bottom", 44, 30, 1);
 	// .products__container
 	&__container {
@@ -528,3 +532,187 @@ body {
 
 
 // ===========================</Our Products>========================================================================
+// ===========================<Rooms>============================================================================================
+.rooms {
+	background: #77ad77;
+	@include adaptiv-value("padding-top", 44, 30, 1);
+	@include adaptiv-value("padding-bottom", 44, 30, 1);
+	// .rooms__container
+	&__container {
+		@media (min-width: $md2+px) {
+			display: flex;
+		}
+	}
+	// .rooms__body
+	&__body {
+		flex: 0 0 465 / 1240 * 100%;
+		position: relative;
+		z-index: 5;
+		align-self: center;
+		@media (min-width: $md2+px) {
+			@include adaptiv-value("padding-right", 80, 30, 1);
+		}
+		@media (max-width: $md2+px) {
+			margin: 0 0 30px 0;
+		}
+	}
+	// .rooms__title
+	&__title {
+		&:not(:last-child) {
+			margin: 0 0 8px/40px * 1em 0px;
+		}
+		text-align: left;
+	}
+	// .rooms__text
+	&__text {
+		line-height: 150%;
+		font-weight: 500;
+		&:not(:last-child) {
+			margin: 0 0 24px 0;
+		}
+	}
+	// .rooms__button
+	&__button {
+		background: $orangeColor;
+		color: #ffffff;
+		min-width: 180px;
+		border-radius: 10px;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: $greenColor;
+			}
+		}
+	}
+	// .rooms__slider
+	&__slider {
+		flex: 1 1 auto;
+		min-width: 0;
+		align-self: flex-start;
+		@media (max-width: $md4+px) {
+			margin: 0 -15px;
+		}
+	}
+}
+.slider-rooms {
+	position: relative;
+	// .slider-rooms__body
+	&__body {
+		 overflow: visible;
+		 position: relative;
+		 &::before {
+			 content: "";
+			 position: absolute;
+			 top: 0;
+			 height: 100%;
+			 width: 100vw;
+			 left: 0;
+			 background: #77ad77;
+			 z-index: 2;
+			 transform: translate(-100%, 0px);
+		 }
+	}
+	// .slider-rooms__slide
+	&__slide {
+		width: 372px;
+		position: relative;
+		overflow: hidden;
+		@include adaptiv-value("min-height", 585, 400, 1);
+		&.swiper-slide-active {
+			.slider-rooms__image {
+				padding: 0 0 100% 0;
+			}
+		}
+		@media (max-width: $md4+px) {
+			width: 100%;
+		}
+	}
+	// .slider-rooms__image
+	&__image {
+		padding: 0 0 100%;
+		transition: height 0.8s ease 0s;
+		@media (min-width: $md3+px) {
+			padding: 0 0 83% 0;
+		}
+	}
+	// .slider-rooms__content
+	&__content {
+		position: absolute;
+		color: inherit;
+		max-width: 240px;
+		@include adaptiv-value("left", 24, 15, 1);
+		@include adaptiv-value("bottom", 24, 15, 1);
+		@include adaptiv-value("padding", 32, 15, 1);
+		background: rgba(255, 255, 255, 0.9);
+		/* Если браузер поддерживает backdrop-filter */
+		@supports ((-webkit-backdrop-filter: blur(31px)) or (backdrop-filter: blur(31px))) {
+			background: rgba(255, 255, 255, 0.72);
+			backdrop-filter: blur(31px);
+		}
+		&::before {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			transform: translate(100%, 0px);
+			width: 48px;
+			height: 48px;
+			background-color: $orangeColor;
+			color: #ffffff;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+	// .slider-rooms__label
+	&__label {
+	}
+	// .slider-rooms__title
+	&__title {
+		font-weight: 600;
+		@include adaptiv-value("font-size", 28, 24, 1);
+	}
+	// .slider-rooms__arrows
+	&__arrows {
+		pointer-events: none;
+		position: absolute;
+		top: 50%;
+		transform: translate(0px, -50%);
+		width: calc(100% + 48px);
+		left: -24px;
+		z-index: 5;
+		justify-content: space-between;
+		@media (max-width: $md4+px) {
+			left: 24px;
+			width: calc(100% - 48px);
+		}
+	}
+	// .slider-rooms__dotts
+	&__dotts {
+		justify-content: center;
+		@media (max-width: $md3+px) {
+			
+			padding: 18px 0 0 0;
+		}
+	}
+}
+.label-slider {
+	display: grid;
+	gap: 8px;
+	align-items: center;
+	justify-content: start;
+	color: $darkGrayColor;
+	grid-template-columns: auto 27px auto;
+	&:not(:last-child) {
+		margin: 0 0 8px 0;
+	}
+	// .label-slider__number
+	&__number {
+	}
+	// .label-slider__line
+	&__line {
+		height: 1px;
+		background-color: $darkGrayColor;
+	}
+	// .label-slider__text
+	&__text {
+	}
+}
