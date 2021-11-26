@@ -3,7 +3,9 @@ body {
 		overflow: hidden;
 	}
 }
-
+._swiper {
+	overflow: hidden;
+}
 // стили для постоянного прижатия футера к низу страницы
 html, body {
 	height: 100%;

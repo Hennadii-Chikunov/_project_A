@@ -100,13 +100,53 @@ if (document.querySelector('.slider-rooms__body')) {
 		parallax: true,
 		// Dotts
 		pagination: {
-			el: '.swiper-pagination, .slider-rooms__dotts',
+			el: '.slider-rooms__dotts',
 			clickable: true,
 		},
 		// Arrows
 		navigation: {
 			nextEl: '.slider-rooms .slider-arrow__next',
 			prevEl: '.slider-rooms .slider-arrow__prev',
+		}
+	});
+}
+// Slider section.Tips
+if (document.querySelector('.slider-tips__body')) {
+	new Swiper('.slider-tips__body', {
+		observer: true,
+		observeParents: true,
+		slidesPerView: 3,
+		spaceBetween: 32,
+		watchOverflow: true,
+		speed: 800,
+		loop: true,
+		loopAdditionalSlides: 6,
+		// Dotts
+		pagination: {
+			el: '.swiper-pagination, .slider-tips__dotts',
+			clickable: true,
+		},
+		// Arrows
+		navigation: {
+			nextEl: '.slider-tips .slider-arrow__next',
+			prevEl: '.slider-tips .slider-arrow__prev',
+		},
+		breakpoints: {
+			// when window is >= 320px
+			320: {
+				slidesPerView: 1.1,
+				spaceBetween: 15
+			},
+			// when window width is >= 768px
+			768: {
+				slidesPerView: 2,
+				spaceBetween: 20
+			},
+			// when window width is >= 992
+			992: {
+				slidesPerView: 3,
+				spaceBetween: 32
+			}
 		}
 	});
 }

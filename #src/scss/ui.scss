@@ -59,6 +59,12 @@ button {
 		font-size: 20px;
 		z-index: 100;
 		color: $placeholder;
+		@media (max-width: $md2+px) {
+			font-size: 16px;
+		}
+		@media (max-width: $md3+px) {
+			font-size: 14px;
+		}
 	 }
 
 .footer-title {
@@ -100,6 +106,57 @@ button {
 		}
 	}
 }
+ main.main {
+  	
+
+	.swiper-pagination-bullets {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.swiper-pagination-bullet {
+		cursor: pointer;
+		flex: 0 0 27px;
+		height: 27px;
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 2px 0px;
+		background: transparent;
+		&:not(:last-child) {
+			margin-right: 12px;
+		}
+		&::after {
+			content: "";
+			width: 11px;
+			height: 11px;
+			background: #181616;
+			border-radius: 50%;
+			transition: background 0.3s ease 0s;
+			transform: translate(1px,1px);
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			border-radius: 50%;
+			border: 1px solid $greenColor;
+			transition: transform 0.3s ease 0s;
+			transform: scale(0);
+		}
+	}
+    .swiper-pagination-bullet-active {
+		 &::after {
+			 background-color: $greenColor;
+		 }
+		 &::before {
+			transform: scale(1);
+		 }
+	 }
+}	
 
 .slider-arrows {
 	display: grid;
@@ -112,7 +169,7 @@ button {
 	height: 48px;
 	background-color: rgba(133, 118, 110, 0.342);
 	color: $greenColor;
-   font-size: 12px;
+	font-size: 12px;
 	cursor: pointer;
 	transition: 0.4s ease 0s;
 		// .slider-arrow__prev
@@ -143,106 +200,7 @@ button {
 			}
 		}
 	}
-}	
-.main-slider__body,
-.slider-rooms {
-	.swiper-pagination-bullets {
-		display: flex;
-		flex-wrap: wrap;
-	}
-	.swiper-pagination-bullet {
-		cursor: pointer;
-		flex: 0 0 27px;
-		height: 27px;
-		position: relative;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		margin: 2px 0px;
-		background: transparent;
-		&:not(:last-child) {
-			margin-right: 12px;
-		}
-		&::after {
-			content: "";
-			width: 11px;
-			height: 11px;
-			background: #181616;
-			border-radius: 50%;
-			transition: background 0.3s ease 0s;
-			transform: translate(1px,1px);
-			
-		}
-		&::before {
-			content: "";
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			border-radius: 50%;
-			border: 1px solid $greenColor;
-			transition: transform 0.3s ease 0s;
-			transform: scale(0);
-		}
-	}
-    .swiper-pagination-bullet-active {
-		 &::after {
-			 background-color: $greenColor;
-		 }
-		 &::before {
-			transform: scale(1);
-		 }
-	 }
 }
 
-.slider-rooms__body {
-	.swiper-pagination-bullets {
-		display: flex;
-		flex-wrap: wrap;
-	}
-	.swiper-pagination-bullet {
-		cursor: pointer;
-		flex: 0 0 27px;
-		height: 27px;
-		position: relative;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		margin: 2px 0px;
-		background: transparent;
-		&:not(:last-child) {
-			margin-right: 12px;
-		}
-		&::after {
-			content: "";
-			width: 11px;
-			height: 11px;
-			background: #181616;
-			border-radius: 50%;
-			transition: background 0.3s ease 0s;
-			transform: translate(1px,1px);
 			
-		}
-		&::before {
-			content: "";
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			border-radius: 50%;
-			border: 1px solid $greenColor;
-			transition: transform 0.3s ease 0s;
-			transform: scale(0);
-		}
-	}
-    .swiper-pagination-bullet-active {
-		 &::after {
-			 background-color: $greenColor;
-		 }
-		 &::before {
-			transform: scale(1);
-		 }
-	 }
-}
+
