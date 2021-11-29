@@ -26,6 +26,7 @@ $placeholder: #02182b;
 @import 'footer';
 @import 'ui';
 @import 'cart-list';
+@import 'lightgallery-bundle';
 //</Подключение ФАЙЛОВ СТИЛЕЙ, СТРАНИЦ И ЭЛЕМЕНТОВю===================================================
 //<Шрифт по умолчанию>===============================================
 $fontFamily: "Gilroy";
@@ -75,6 +76,9 @@ body {
 	}
 	// .page__tips
 	&__tips {
+	}
+	// .page__furniture
+	&__furniture {
 	}
 }
 //</ОСНОВНОЙ БЛОК>================================
@@ -810,5 +814,119 @@ body {
 		}
 	}
 }
-
-
+//======================================<Furniture Gallery>===============================================================================================
+.furniture {
+	background: #0a0909;
+	color: #ffffff;
+	@include adaptiv-value("padding-bottom", 85, 40, 1);
+	// .furniture__container
+	&__container {
+	}
+	// .furniture__label
+	&__label {
+		text-align: center;
+		line-height: 150%;
+		@include adaptiv-value("padding-top", 20, 10, 1);
+		@include adaptiv-value("font-size", 20, 16, 1);
+		&:not(:last-child) {
+         margin: 0 0 8px/20px * 1em 0px;
+		}
+	}
+	// .furniture__title
+	&__title {
+		margin: 0 0 32px/40px * 1em 0px;
+	}
+	// .furniture__body
+	&__body {
+		position: relative;
+		@media (any-hover: none ) {
+			overflow: auto;
+			-webkit-overflow-scrolling: touch;
+		}
+	}
+	// .furniture__items
+	&__items {
+		display: grid;
+		grid-template-columns: auto;
+		grid-auto-flow: column;
+		align-items: center;
+		gap: 20px;
+      @media (any-hover: hover) {
+		   justify-content: center;
+		}
+		@media (max-width: $md3+px) {
+			display: flex;
+			flex-wrap: wrap;
+		   gap: 8px;
+		}
+	}
+	// .furniture__column
+	&__column {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		margin: 0px -40px;
+		&:first-child {
+			justify-content: flex-end;
+		}
+		@media (max-width: $md3+px) {
+			margin: 0 0 0 0;
+		}
+	}
+	// .furniture__row
+	&__row {
+		display: inline-grid;
+		padding: 0px 40px;
+		gap: 20px;
+		grid-template-columns: auto;
+		grid-auto-flow: column;
+		margin: 0 0 20px 0;
+		@media (max-width: $md3+px) {
+			padding: 0 0 0 0;
+		}
+	}
+}
+.row-furniture {
+	// .row-furniture__left-top
+	&__left-top {
+		justify-content: end;
+		align-items: end;
+	}
+	// .row-furniture__item
+	&__item {
+		img {
+			border-radius: 20px;
+		}
+		@media (any-hover: hover) {
+		img {
+			transition: all 0.6s ease 0s;
+			filter: grayscale(1);
+		}
+		&:hover {
+			img {
+				filter: grayscale(0);
+			}
+		}
+		}
+	}
+	// .row-furniture__left-bottom
+	&__left-bottom {
+		justify-content: end;
+		align-items: start;
+	}
+	// .row-furniture__center
+	&__center {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		align-self: stretch;
+	}
+	// .row-furniture__right-top
+	&__right-top {
+		align-items: end;
+	}
+	// .row-furniture__right-bottom
+	&__right-bottom {
+		align-items: start;
+	}
+}

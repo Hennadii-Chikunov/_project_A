@@ -30,5 +30,8 @@
     "gulp-webpcss": "^1.1.1",
     "sass": "^1.32.12",
     "webp-converter": "^2.2.3"
+  },
+  "dependencies": {
+    "lightgallery": "^2.3.0"
   }
 }
