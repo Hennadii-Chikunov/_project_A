@@ -24,8 +24,10 @@
 * _Ссылки меню навигации, реализованны через кнопки __(button)__,что на моб. разрешении позволяет превратить их в спойлеры, что так же, сделаны на ___чистом JS____
 * ниже будут представлены .gif которые покажут ПРЕЗЕНТАЦИЮ сайта на разных расширениях и эмуляцию от десктопных приложений до мобильных( от hover до touch(a))
 ## preViewHeader
- ![](https://github.com/Hennadii-Chikunov/_test-project/blob/main/%23src/img/preView/Header.gif)
+ ![](https://github.com/Hennadii-Chikunov/_test-project/blob/main/%23src/img/READMDpreView/Header.gif)
 ## preViewOurProducts + cart
- ![](https://github.com/Hennadii-Chikunov/_test-project/blob/main/%23src/img/preView/OurProducts.gif)
+ ![](https://github.com/Hennadii-Chikunov/_test-project/blob/main/%23src/img/READMDpreView/OurProducts.gif)
  ## preViewMain
- ![](https://github.com/Hennadii-Chikunov/_test-project/blob/main/%23src/img/preView/main.gif)
+ ![](https://github.com/Hennadii-Chikunov/_test-project/blob/main/%23src/img/READMDpreView/main.gif)
+ ## preViewFinalBlockFurniture
+ ![](https://github.com/Hennadii-Chikunov/_test-project/blob/main/%23src/img/READMDpreView/Furniture.gif)
