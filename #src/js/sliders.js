@@ -1,4 +1,5 @@
-let sliders = document.querySelectorAll('._swiper');
+window.onload = function () {
+	let sliders = document.querySelectorAll('._swiper');
 if (sliders) {
    for (let index = 0; index < sliders.length; index++) {
       let slider = sliders[index];
@@ -149,4 +150,5 @@ if (document.querySelector('.slider-tips__body')) {
 			}
 		}
 	});
+}
 }

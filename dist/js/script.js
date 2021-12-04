@@ -377,7 +377,8 @@ if (menuLinks.length > 0) {
 		}
 	}
 }
-let sliders = document.querySelectorAll('._swiper');
+window.onload = function () {
+	let sliders = document.querySelectorAll('._swiper');
 if (sliders) {
    for (let index = 0; index < sliders.length; index++) {
       let slider = sliders[index];
@@ -528,6 +529,7 @@ if (document.querySelector('.slider-tips__body')) {
 			}
 		}
 	});
+}
 }
 
 /**
@@ -760,7 +762,7 @@ function ibg(){
 			let productTemplateActions = `
 		<div class="item-product__actions actions-product">
 			<div class="actions-product__body">
-				<a href="" class="actions-product__button btn btn__white">Add to cart</a>
+				<a href="##" class="actions-product__button btn btn__white">Add to cart</a>
 				<a href="${productShareUrl}" class="actions-product__link icon-share">Share</a>
 				<a href="${productLikeUrl}" class="actions-product__link icon-favorite">Like</a>
 			</div>
@@ -812,7 +814,7 @@ function ibg(){
 			height: ${productImageFlyHeight}px;
 			`;
 
-          document.body.append(productImageFly);
+          document.querySelector.append(productImageFly);
 
           const cartFlyLeft = cart.getBoundingClientRect().left;
 			 const cartFlyTop = cart.getBoundingClientRect().top;

@@ -914,6 +914,13 @@ main.main .swiper-pagination-bullet-active::before {
   background-color: #ffffff;
 }
 
+.span-cart {
+  font-size: 20px;
+  color: red;
+  line-height: 150%;
+  font-weight: 700;
+}
+
 .cart-header__icon {
   color: #033d03;
   font-size: 32px;
@@ -1015,6 +1022,13 @@ main.main .swiper-pagination-bullet-active::before {
 .cart-list__quantity {
   margin: 0 0 0.3571428571em 0px;
   font-size: 18px;
+}
+
+.cart-list__quantity span {
+  font-size: 24px;
+  font-weight: 900;
+  color: #8f0a05;
+  line-height: 150%;
 }
 
 .cart-list__delete {

@@ -225,7 +225,7 @@ function ibg(){
 			let productTemplateActions = `
 		<div class="item-product__actions actions-product">
 			<div class="actions-product__body">
-				<a href="" class="actions-product__button btn btn__white">Add to cart</a>
+				<a href="##" class="actions-product__button btn btn__white">Add to cart</a>
 				<a href="${productShareUrl}" class="actions-product__link icon-share">Share</a>
 				<a href="${productLikeUrl}" class="actions-product__link icon-favorite">Like</a>
 			</div>
