@@ -1,5 +1,4 @@
-window.onload = function () {
-	let sliders = document.querySelectorAll('._swiper');
+let sliders = document.querySelectorAll('._swiper');
 if (sliders) {
    for (let index = 0; index < sliders.length; index++) {
       let slider = sliders[index];
@@ -101,7 +100,7 @@ if (document.querySelector('.slider-rooms__body')) {
 		parallax: true,
 		// Dotts
 		pagination: {
-			el: '.slider-rooms__dotts',
+			el: '.swiper-pagination, .slider-rooms__dotts',
 			clickable: true,
 		},
 		// Arrows
@@ -111,7 +110,8 @@ if (document.querySelector('.slider-rooms__body')) {
 		}
 	});
 }
-// Slider section.Tips
+
+// слайдер section.Tips
 if (document.querySelector('.slider-tips__body')) {
 	new Swiper('.slider-tips__body', {
 		observer: true,
@@ -121,7 +121,9 @@ if (document.querySelector('.slider-tips__body')) {
 		watchOverflow: true,
 		speed: 800,
 		loop: true,
-		loopAdditionalSlides: 6,
+		loopAdditionalSlides: 5,
+		preLoadImages: false,
+		parallax: true,
 		// Dotts
 		pagination: {
 			el: '.swiper-pagination, .slider-tips__dotts',
@@ -150,5 +152,4 @@ if (document.querySelector('.slider-tips__body')) {
 			}
 		}
 	});
-}
 }

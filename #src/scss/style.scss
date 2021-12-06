@@ -27,6 +27,7 @@ $placeholder: #02182b;
 @import 'ui';
 @import 'cart-list';
 @import 'lightgallery-bundle';
+
 //</Подключение ФАЙЛОВ СТИЛЕЙ, СТРАНИЦ И ЭЛЕМЕНТОВю===================================================
 //<Шрифт по умолчанию>===============================================
 $fontFamily: "Gilroy";
@@ -835,6 +836,10 @@ body {
 	// .furniture__title
 	&__title {
 		margin: 0 0 32px/40px * 1em 0px;
+		background: rgba(6, 223, 176, 0.42);
+		&::first-letter {
+			color: #000000;
+		}
 	}
 	// .furniture__body
 	&__body {

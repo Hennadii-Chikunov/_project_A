@@ -3411,6 +3411,11 @@ body {
 
 .furniture__title {
   margin: 0 0 0.8em 0px;
+  background: rgba(6, 223, 176, 0.42);
+}
+
+.furniture__title::first-letter {
+  color: #000000;
 }
 
 .furniture__body {
